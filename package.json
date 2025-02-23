@@ -1,0 +1,17 @@
+{
+  "type": "module",
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "typescript": "^5.7.3"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "@synthetixio/synpress": "^4.0.3",
+    "cypress": "^14.0.1",
+    "hardhat": "^2.22.18"
+  },
+  "scripts": {
+    "test:cypress:ui": "npx cypress run --browser chrome --headed",
+    "test:cypress:ui:advertisements": "npx cypress run --browser chrome --headed --spec cypress/integration/advertisements*"
+  }
+}
