@@ -41,7 +41,11 @@ describe("create new advertise", () => {
     cy.get('[data-test="input-description"]').type("cypress test description");
     cy.get('[data-test="input-product-link"]').type("http://theProductUrl.com");
     // cy.get('[data-test="date"]').click();
-    cy.get('[data-test="date"]').type("2025-02-10", { force: true });
+    const today = new Date();
+    const futureDate = new Date(today);
+    futureDate.setDate(today.getDate() + 10);
+    const formattedDate = futureDate.toISOString().split("T")[0];
+    cy.get('[data-test="date"]').type(formattedDate, { force: true });
     cy.get('[data-test="input-duration"]').type(13, { force: true });
     cy.get('[data-test="input-budget"]').type(1);
     cy.get('[data-test="button-submit"]').click({ force: true });
@@ -51,7 +55,7 @@ describe("create new advertise", () => {
     // });
     cy.confirmTransactionAndWaitForMining().then((result) => {
       expect(result).to.be.true;
-      cy.wait(20000);
+      cy.wait(40000);
     });
   });
 });

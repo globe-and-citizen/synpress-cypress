@@ -43,6 +43,27 @@ test/cypress/fixtures/env.json
 
 ⚠ **Keep this file secure and do not expose it publicly!**
 
+## 🔑 Environment Variables
+
+Add or update the following environment variables in your target project (e.g., Celebrity Fanalyzer):
+
+```bash
+VITE_ADVERTISEMENT_CAMPAIGN_CONTRACT_ADDRESS="0x1922Afe544B6B173EE2792903C951F75b4Fc2fF3"
+VITE_ESCROW_CONTRACT="0xC7228419F7CE67570fC8bd3465DADEdB2b2bC9F9"
+```
+
+Ensure these variables are correctly set in your environment configuration file (e.g., `.env`) to enable proper functionality of the advertisement campaign and escrow contract features.
+
+## 📝 File Permissions
+
+Ensure the project folder has the correct write permissions to allow files to be updated during tests. You can set the appropriate permissions using the following command:
+
+```bash
+chmod -R u+w .
+```
+
+This command grants write permissions to the user for all files and directories within the project folder.
+
 ## 🏃‍♂️ Running Tests
 
 ### Run Cypress UI:

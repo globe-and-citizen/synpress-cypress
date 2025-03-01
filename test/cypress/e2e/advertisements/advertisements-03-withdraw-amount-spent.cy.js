@@ -41,7 +41,7 @@ describe("create new advertise", () => {
       });
       cy.confirmTransactionAndWaitForMining().then((result) => {
         expect(result).to.be.true;
-        cy.wait(20000);
+        cy.wait(40000);
       });
     });
 

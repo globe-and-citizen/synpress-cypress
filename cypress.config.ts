@@ -5,6 +5,7 @@ export default defineConfig({
   chromeWebSecurity: true,
   video: true,
   defaultCommandTimeout: 100000,
+  pageLoadTimeout: 60000,
   e2e: {
     baseUrl: "http://localhost:9200",
     specPattern: "test/cypress/**/*.cy.{js,jsx,ts,tsx}",
