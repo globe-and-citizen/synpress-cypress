@@ -28,7 +28,7 @@ describe("create new advertise", () => {
       cy.wait(300);
       cy.get('[data-test="withdraw-amount"]').first().click();
 
-      cy.customSwitchNetwork("sepolia");
+      cy.customSwitchNetwork("Hardhat Network");
       cy.customConnectWeb3();
 
       cy.get('[data-test="withdraw-amount"]').first().click();
@@ -41,10 +41,10 @@ describe("create new advertise", () => {
       });
       cy.confirmTransactionAndWaitForMining().then((result) => {
         expect(result).to.be.true;
-        cy.wait(40000);
+        cy.wait(1000);
       });
     });
 
-    // cy.contains("Campaign payment claimed successfully").should("be.visible");
+    cy.contains("Campaign payment claimed successfully").should("be.visible");
   });
 });

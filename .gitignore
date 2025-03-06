@@ -1,3 +1,11 @@
 node_modules
 package-lock.json
 downloads
+artifacts
+cache
+trash
+cypress-test-videos
+cypress/screenshots
+cypress/videos
+hardhat.log
+hardhat.pid

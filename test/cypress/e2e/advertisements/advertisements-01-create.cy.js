@@ -32,7 +32,7 @@ describe("create new advertise", () => {
     cy.get('[data-test="dropdown-menu"]').should("be.visible");
     cy.get('[data-test="dropdown-menu"]').click();
     cy.get('[data-test="create-advertise"]').click();
-    cy.customSwitchNetwork("sepolia");
+    cy.customSwitchNetwork("Hardhat Network");
     cy.customConnectWeb3();
     cy.get('[data-test="dropdown-menu"]').click();
     cy.get('[data-test="create-advertise"]').click();
@@ -55,7 +55,8 @@ describe("create new advertise", () => {
     // });
     cy.confirmTransactionAndWaitForMining().then((result) => {
       expect(result).to.be.true;
-      cy.wait(40000);
+      cy.wait(1000);
     });
+    cy.contains("Advertise successfully submitted").should("be.visible");
   });
 });

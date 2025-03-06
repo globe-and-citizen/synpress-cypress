@@ -204,7 +204,7 @@ describe("Admin Prompt & Entry", () => {
 
     // Assert that the mocked address is used
 
-    cy.customSwitchNetwork("sepolia");
+    cy.customSwitchNetwork("Hardhat Network");
     cy.customConnectWeb3();
 
     //cy.connectToDapp();

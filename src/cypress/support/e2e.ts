@@ -9,17 +9,18 @@ synpressCommandsForMetaMask();
 
 Cypress.Commands.add("customSwitchNetwork", (netWorkName) => {
   cy.getNetwork().then((network) => {
+    cy.log("the network is =============", network);
     if (network === netWorkName) {
       cy.log("Network is already selected");
       return true;
     } else {
       //cy.toggleShowTestNetworks();
-      if (netWorkName === "hardhat") {
+      if (netWorkName === "Hardhat Network") {
         //let's add hardhat network
         cy.addNetwork({
           blockExplorerUrl: "",
           chainId: 31337,
-          name: "hardhat",
+          name: "Hardhat Network",
           rpcUrl: "http://localhost:8545",
           symbol: "ETH",
         });

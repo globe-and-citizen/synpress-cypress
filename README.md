@@ -36,23 +36,10 @@ test/cypress/fixtures/env.json
 
 ```json
 {
-  "walletAddress": "your-wallet-address",
-  "privateKey": "your-private-key"
+  "walletAddress": "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266",
+  "privateKey": "0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80"
 }
 ```
-
-⚠ **Keep this file secure and do not expose it publicly!**
-
-## 🔑 Environment Variables
-
-Add or update the following environment variables in your target project (e.g., Celebrity Fanalyzer):
-
-```bash
-VITE_ADVERTISEMENT_CAMPAIGN_CONTRACT_ADDRESS="0x1922Afe544B6B173EE2792903C951F75b4Fc2fF3"
-VITE_ESCROW_CONTRACT="0xC7228419F7CE67570fC8bd3465DADEdB2b2bC9F9"
-```
-
-Ensure these variables are correctly set in your environment configuration file (e.g., `.env`) to enable proper functionality of the advertisement campaign and escrow contract features.
 
 ## 📝 File Permissions
 
@@ -64,7 +51,36 @@ chmod -R u+w .
 
 This command grants write permissions to the user for all files and directories within the project folder.
 
-## 🏃‍♂️ Running Tests
+# 🏃‍♂️ Running Tests
+
+## Stop Hardhat Node
+
+To stop the Hardhat node, run the following command:
+
+```bash
+npm run stop:hardhat
+```
+
+### Start Hardhat Node, Compile and Deploy Contracts
+
+To start the Hardhat node, compile, and deploy contracts, use the following command:
+
+```bash
+npm run start:deploy:hardhat
+```
+
+After the deployment, please copy the respective contract addresses to the Celebrity Fanalyzer project.
+
+⚠ **Keep this file secure and do not expose it publicly!**
+
+Add or update the following environment variables in your target project (e.g., Celebrity Fanalyzer) the values should be what you get from the deploy script:
+
+```bash
+VITE_ADVERTISEMENT_CAMPAIGN_CONTRACT_ADDRESS=""
+VITE_ESCROW_CONTRACT=""
+```
+
+Ensure these variables are correctly set in your environment configuration file (e.g., `.env`) to enable proper functionality of the advertisement campaign and escrow contract features.
 
 ### Run Cypress UI:
 

@@ -33,7 +33,7 @@ describe("create new advertise", () => {
         .first()
         .click({ force: true });
 
-      cy.customSwitchNetwork("sepolia");
+      cy.customSwitchNetwork("Hardhat Network");
       cy.customConnectWeb3();
       cy.get('[data-test="withdraw-remaining-budget"]')
         .first()
@@ -45,9 +45,11 @@ describe("create new advertise", () => {
 
       cy.confirmTransactionAndWaitForMining().then((result) => {
         expect(result).to.be.true;
-        cy.wait(40000);
+        cy.wait(1000);
       });
-      //cy.contains("Remaining budget withdrawn successfully").should("be.visible");
+      cy.contains("Remaining budget withdrawn successfully").should(
+        "be.visible"
+      );
     });
   });
 });

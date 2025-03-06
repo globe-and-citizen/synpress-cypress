@@ -1,6 +1,7 @@
 {
   "type": "module",
   "dependencies": {
+    "@openzeppelin/contracts": "^5.2.0",
     "dotenv": "^16.4.7",
     "typescript": "^5.7.3"
   },
@@ -11,7 +12,13 @@
     "hardhat": "^2.22.18"
   },
   "scripts": {
-    "test:cypress:ui": "npx cypress run --browser chrome --headed",
-    "test:cypress:ui:advertisements": "npx cypress run --browser chrome --headed --spec cypress/integration/advertisements*"
+    "test:cypress:ui": "rm -r downloads && node run-tests-final.js test/cypress/e2e ",
+    "test:cypress:ui:advertisements": "rm -r downloads && node run-tests-final.js test/cypress/e2e/advertisements ",
+    "build:contract": "npx hardhat compile --force",
+    "deploy:ad_campaign": "npx hardhat run scripts/deploy_ad_campaign.cjs --network localhost",
+    "deploy:escrow": "npx hardhat run scripts/deploy_escrow.cjs --network localhost",
+    "stop:hardhat": "lsof -ti :8545 | xargs kill -9 2>/dev/null || echo 'No Hardhat node running.'",
+    "start:hardhat": "nohup npx hardhat node --verbose > hardhat.log 2>&1 &",
+    "start:deploy:hardhat": "npm run start:hardhat && npm run build:contract && npm run deploy:ad_campaign  && npm run deploy:escrow "
   }
 }
